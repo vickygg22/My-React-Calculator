@@ -1,12 +1,50 @@
-
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+*, *::before,  *::after {
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(to right, rgb(149, 149, 247), rgb(124, 226, 124));
+}
+.calculator-grid{
+    display: grid;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+    justify-content: center;
+}
+.span-two{
+    grid-column: span 2;
+}
+.output{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 8px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.output .previousOperand {
+    color: rgb(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+.output .currentOperand {
+    color: white;
+    font-size: 2.5rem;
+}
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: solid rgb(255, 255, 255, 0.75);;
+    border-width: 1px;
+    outline: none;
+    background-color: rgb(255, 255, 255, 0.75);
+}
+.calculator-grid > button:hover {
+    background-color:  rgb(255, 255, 255, 0.9);
+}
+.calculator-grid > button:focus {
+    background-color:  rgb(255, 255, 255, 0.9);
+}
